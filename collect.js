@@ -145,7 +145,7 @@ var vfed = {
 		}, {
 			'name': '156云资源',
 			'rema': '右下角常驻水印',
-			'apis': 'http://www.156zy.com/inc/33uuck.php',
+			'apis': 'http://www.33uu.tv/inc/33uuck.php',
 			'flag': 'sanu',
 			'coll': '156在线,33uuck,38,1,asset/fed/player.php?url=',
 			'tips': '<span class="layui-badge layui-bg-green">国外节点</span>',
