@@ -1,0 +1,93 @@
+<!--代码开源，透明，请勿用于商业用途，完全开源模式，供大家一起探讨研究-->
+<!--如有问题（反馈）请登录 www.wayu.cn 查询最新代码-->
+<!--代码来源：http://www.wayu.cn/35147.html-->
+<html>
+<head>
+	<title>dplayer播放器</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+	<meta http-equiv="X-UA-Compatible" content="IE=11" />
+	<meta content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no" 
+ 
+id="viewport" name="viewport">
+	<style type="text/css">
+	html,body{width:100%;height:100%; padding:0; margin:0;}
+	#playerCnt{width:100%;height:100%;}
+	</style>
+		<link rel="stylesheet" href="/static/player/dplayer/DPlayer.min.css">
+	<script type="text/javascript" src="/static/player/dplayer/flv.min.js"></script>
+	<script type="text/javascript" src="/static/player/dplayer/hls.min.js"></script>
+	<script type="text/javascript" src="/static/player/dplayer/dash.all.min.js"></script>
+	<script type="text/javascript" src="/static/player/dplayer/webtorrent.min.js"></script>
+	<script type="text/javascript" src="/static/player/dplayer/DPlayer.min.js"></script>
+</head>
+<body marginwidth="0" marginheight="0">
+<div id="playerCnt"></div>
+<script type="text/javascript">
+    var webdata = {
+		set:function(key,val){
+			window.sessionStorage.setItem(key,val);
+		},
+		get:function(key){
+			return window.sessionStorage.getItem(key);
+		},
+		del:function(key){
+			window.sessionStorage.removeItem(key);
+		},
+		clear:function(key){
+			window.sessionStorage.clear();
+		}
+	};
+    var type='normal';
+    var live=false;
+    if(parent.MacPlayer.PlayUrl.indexOf('.m3u8')>-1){
+        type='hls';
+        live=true;
+    }
+    else if(parent.MacPlayer.PlayUrl.indexOf('magnet:')>-1){
+        type='webtorrent';
+    }
+    else if(parent.MacPlayer.PlayUrl.indexOf('.flv')>-1){
+        type='flv';
+    }
+    else if(parent.MacPlayer.PlayUrl.indexOf('.mpd')>-1){
+        type='dash';
+    }
+ 
+    var dp = new DPlayer({
+        container: document.getElementById('playerCnt'),
+        autoplay: true,
+        screenshot: false,
+        video: {
+            url: parent.MacPlayer.PlayUrl,
+            live: live,
+            type:type,
+        },
+         volume: 1.0,
+         preload: 'auto',
+         theme: '#28FF28',
+         contextmenu: [
+ 
+        ]
+    });
+	dp.seek(webdata.get('pay'+parent.MacPlayer.PlayUrl));
+	setInterval(function(){
+		webdata.set('pay'+parent.MacPlayer.PlayUrl,dp.video.currentTime);
+	},1000);
+        dp.on('ended', function (){
+        if(parent.MacPlayer.PlayLinkNext!=''){
+            top.location.href = parent.MacPlayer.PlayLinkNext;
+        }
+    });
+if ((navigator.userAgent.indexOf('MSIE') >= 0)
+			|| (navigator.userAgent.indexOf('Trident') >= 0)) {
+		alert("\u517c\u5bb9\u6a21\u5f0f\u0020\u6613\u4ea7\u751f\u64ad\u653e\u95ee\u9898\uff0c
+ 
+\u8bf7\u5c06\u6d4f\u89c8\u5668\u8bbe\u7f6e\u4e3a\u0020\u6781\u901f\u6a21\u5f0f\uff01");
+     }
+       try{
+		//document.getElementById('playerCnt').style.height = parent.MacPlayer.Height + 'px';
+	}
+	catch(e){}
+</script>
+</body>
+</html>
