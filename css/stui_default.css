@@ -129,7 +129,7 @@ textarea.form-control{ height: auto;}
 .stui-vodlist li.topic{ width: 25%;}
 .stui-vodlist__thumb{display: block; position: relative; padding-top: 150%; background: url(../img/load.gif) no-repeat; background-position: 50% 50%; background-size: cover;}
 .stui-vodlist__thumb.active{ padding-top: 60%; background: url(../img/load_w.gif) no-repeat; background-position: 50% 50%; background-size: cover;}
-.stui-vodlist__thumb .play{display: none; position: absolute; top: 0; z-index: 1; width: 100%; height: 100%; background: rgba(0,0,0,0.1) url(../img/play.png) center no-repeat;}
+.stui-vodlist__thumb .play{display: none; position: absolute; top: 0; z-index: 1; width: 100%; height: 100%; background: rgba(0,0,0,0.1) url(../img/play(1).png) center no-repeat;}
 .stui-vodlist__thumb:hover .play{ display: block;}
 .stui-vodlist__detail{ margin: 0; padding: 10px 15px; background-color: #1c1b1e;}
 .stui-vodlist__detail .title{ font-size: 14px; margin: 0; text-align: center;}
@@ -286,7 +286,7 @@ textarea.form-control{ height: auto;}
 	
 	/* header */
 	.stui-header{ margin-bottom: 10px;}
-	.stui-header__logo .logo{width: 110px;height:30px;background:url(https://s1.ax1x.com/2018/12/25/Fct2Us.png) no-repeat;background-position:50% 50%;background-size:cover;}	
+	.stui-header__logo .logo{width: 110px;height:30px;background:url(./img/logo.png) no-repeat;background-position:50% 50%;background-size:cover;}	
 	.stui_header__user{ float: right; margin-top: 5px; margin-right: 10px;}
 	.stui_header__user > li{ position: relative; float: left; padding-bottom: 10px; margin-left: 15px;}
 	.stui_header__user > li > a .iconfont{ font-size: 22px;}
