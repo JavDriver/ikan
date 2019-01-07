@@ -61,7 +61,7 @@ textarea.form-control{ height: auto;}
 /* header */
 .stui-header{ margin: 30px 0 20px;}
 .stui-header__logo,.stui-header__menu{float:left; margin-left: 10px;}
-.stui-header__logo .logo{display:block; width:150px; height:45px; background:url(https://s1.ax1x.com/2018/12/25/Fct2Us.png) no-repeat; background-position:50% 50%;background-size:cover}
+.stui-header__logo .logo{display:block; width:150px; height:45px; background:url(../img/logo.png) no-repeat; background-position:50% 50%;background-size:cover}
 .stui-header__menu{ position:relative; margin-top: 15px; margin-left:30px;}
 .stui-header__menu li{ float:left; margin-right: 30px}
 .stui-header__menu li a{ position: relative; font-size:18px; color: #757575;}
@@ -286,7 +286,7 @@ textarea.form-control{ height: auto;}
 	
 	/* header */
 	.stui-header{ margin-bottom: 10px;}
-	.stui-header__logo .logo{width: 110px;height:30px;background:url(./img/logo.png) no-repeat;background-position:50% 50%;background-size:cover;}	
+	.stui-header__logo .logo{width: 110px;height:30px;background:url(../img/logo.png) no-repeat;background-position:50% 50%;background-size:cover;}	
 	.stui_header__user{ float: right; margin-top: 5px; margin-right: 10px;}
 	.stui_header__user > li{ position: relative; float: left; padding-bottom: 10px; margin-left: 15px;}
 	.stui_header__user > li > a .iconfont{ font-size: 22px;}
